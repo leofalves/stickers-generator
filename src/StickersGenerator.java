@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 public class StickersGenerator {
     
-    public void create(InputStream inputStream, String fileName, String rate) throws Exception {
+    public void create(InputStream inputStream, String fileName, String text) throws Exception {
 
         // ler imagem
         //InputStream inputStream = new FileInputStream(new File("images/movie1.jpg"));
@@ -28,21 +28,7 @@ public class StickersGenerator {
         
         // Adaptar tamanho e posição do texto
         int fontSize = 64;
-        int textInitialPosition = 0;
-        if (width > 1599) {
-            fontSize = 64;
-            textInitialPosition = (width / 2)-(width / 4);
-        }
-        
-        if (width < 1600 && width > 700) {
-            fontSize = 32;
-            textInitialPosition = (width / 2)-(width / 4);
-        }
-        
-        if (width < 700) {
-            fontSize = 28;
-            textInitialPosition = (width / 2)-(width / 3);
-        }
+        int textInitialPosition = 150;
 
         // configurar a fonte
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, fontSize);
@@ -50,7 +36,7 @@ public class StickersGenerator {
 
         // escrever um texto        
         graphics.setColor(Color.ORANGE);
-        graphics.drawString(rate, textInitialPosition, newHeight-100);
+        graphics.drawString(text, textInitialPosition, newHeight-100);
 
         // gravar a nova imagem em um arquivo
         ImageIO.write(newImage, "png", new File("images/"+fileName));
