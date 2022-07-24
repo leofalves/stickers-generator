@@ -9,9 +9,12 @@ public class App {
         //String url = "https://api.mocki.io/v2/549a5d8b";
         //ContentExtractor extractor = new ContentExtractorImdb();
 
-        String url = "https://api.mocki.io/v2/549a5d8b/NASA-APOD";
-        ContentExtractor extractor = new ContentExtractorNasa();
-        
+        //String url = "https://api.mocki.io/v2/549a5d8b/NASA-APOD";
+        //ContentExtractor extractor = new ContentExtractorNasa();
+
+        String url = "http://localhost:8080/languages";
+        ContentExtractor extractor = new ContentExtractorLanguage();
+
         HttpClientConnect http = new HttpClientConnect();
         String json = http.findContent(url);
 
@@ -31,7 +34,7 @@ public class App {
 
             System.out.println("File: " + fileName);
             InputStream inputStream = new URL(ImageUrl).openStream();
-            stickersGenerator.create(inputStream, fileName, "by Imdb");
+            stickersGenerator.create(inputStream, fileName, "Dev");
             System.out.println("-----------------------------------------------------------------");
         } 
 

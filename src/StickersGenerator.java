@@ -27,8 +27,8 @@ public class StickersGenerator {
         graphics.drawImage(originalImage, 0, 0, null);
         
         // Adaptar tamanho e posição do texto
-        int fontSize = 64;
-        int textInitialPosition = 150;
+        int fontSize = 32;
+        int textInitialPosition = 100;
 
         // configurar a fonte
         Font font = new Font(Font.SANS_SERIF, Font.BOLD, fontSize);
